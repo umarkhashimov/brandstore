@@ -1,3 +1,104 @@
-.cat-nav li.active{
+body{
+    background-color: black;
+}
+
+.cat-nav li.active a,
+.cat-nav li:hover a{
     background-color: white;
+    color: black;
+}
+
+.cat-nav li a{
+    padding: 10px 20px !important;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+
+.home-header{
+    background-image: url(../img/header-img.png);
+    height: 1000px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-t1{
+    font-weight: 800;
+    font-size: 82px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.header-t1 span{
+    color: #FFC700;
+}
+
+.header-t2{
+    font-size: 24px;
+    font-weight: 400;
+    color: #A8A8A8;
+}
+
+.header-btn1{
+    background-color: #FFC700;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.s2 .t1{
+    margin: 0;
+    font-weight: 600;
+    font-size: 48px;
+    color: white;
+}
+
+.s2 .t1 span{
+    color: #FFC700;;
+}
+
+.s2 .t2{
+    font-size: 32px;
+    font-weight: 300;
+    color: #B8B8B8;
+}
+
+.mycarousel .wrapper{
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.mycarousel .wrapper .c-item{
+    scroll-snap-align: start;
+}
+
+.mycarousel .wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.mycarousel .carousel-btn{
+    background-color: transparent !important;
+    position: relative;
+    border: none;
+    /* background-color: red; */
+    width: 120px;
+}
+
+.mycarousel .carousel-btn::after{
+    position: absolute;
+    content: '';
+    width: 35px;
+    height: 35px;
+    left: 10px;
+    top: 50%;
+    transform: rotate(45deg);
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.mycarousel .carousel-btn.right::after{
+    transform: rotate(-135deg);
 }

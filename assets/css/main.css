@@ -48,3 +48,109 @@ body{
     font-size: 20px;
     font-weight: 800;
 }
+
+.s2 .t1{
+    margin: 0;
+    font-weight: 600;
+    font-size: 48px;
+    color: white;
+}
+
+.s2 .t1 span{
+    color: #FFC700;;
+}
+
+.s2 .t2{
+    font-size: 32px;
+    font-weight: 300;
+    color: #B8B8B8;
+}
+
+.mycarousel .wrapper{
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.mycarousel .wrapper .c-item{
+    scroll-snap-align: start;
+}
+
+.mycarousel .wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.mycarousel .carousel-btn{
+    background-color: transparent !important;
+    position: relative;
+    border: none;
+    /* background-color: red; */
+    width: 120px;
+}
+
+.mycarousel .carousel-btn::after{
+    position: absolute;
+    content: '';
+    width: 35px;
+    height: 35px;
+    left: 10px;
+    top: 50%;
+    transform: rotate(45deg);
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.mycarousel .carousel-btn.right::after{
+    transform: rotate(-135deg);
+}
+
+.s3 {
+
+    .t1{
+        font-size: 72px;
+        font-weight: 700;
+        color: white;
+        
+        .yellow{
+            color: #FFC700;
+        }
+    }
+
+    .t2{
+        font-size: 32px;
+        font-weight: 300;
+        color: #949494;
+    }
+    .mini-nav button{
+        background-color: transparent;
+        border: none;
+        color: #FFFFFF;
+        padding: 5px 10px;
+        transition: 0.3s;
+        font-size: 24px;
+
+        &.active, &:hover{
+            background-color: #FFC700;
+            color: black;
+            box-shadow: 0px 0px 2px 1px #FFC700;
+        }
+    }
+
+    .product-name{
+        font-size: 20px;
+        font-weight: 300;
+        color: #FFFFFF;
+    }
+
+    .product-price{
+        font-size: 24px;
+        font-weight: 700;
+        color: #F0F0F0;
+    }
+
+    .product a {
+        text-decoration: none;
+    }
+
+} 
+
+
