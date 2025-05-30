@@ -1,0 +1,50 @@
+body{
+    background-color: black;
+}
+
+.cat-nav li.active a,
+.cat-nav li:hover a{
+    background-color: white;
+    color: black;
+}
+
+.cat-nav li a{
+    padding: 10px 20px !important;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+
+.home-header{
+    background-image: url(../img/header-img.png);
+    height: 1000px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-t1{
+    font-weight: 800;
+    font-size: 82px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.header-t1 span{
+    color: #FFC700;
+}
+
+.header-t2{
+    font-size: 24px;
+    font-weight: 400;
+    color: #A8A8A8;
+}
+
+.header-btn1{
+    background-color: #FFC700;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 800;
+}
