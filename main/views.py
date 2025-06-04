@@ -6,3 +6,7 @@ from django.shortcuts import render
 def mainpage_view(request):
 
     return render(request, 'main.html')
+
+def category_view(request):
+
+    return render(request, 'category.html')

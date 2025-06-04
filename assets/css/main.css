@@ -271,3 +271,130 @@ body{
         border-radius: 5px;
     }
 }
+
+.mynav{
+
+    *{
+        color: white;
+    }
+
+    .nav-search-form input{
+        background-color: transparent;
+        border-radius: 50px;
+        color: white;
+        padding: 10px 20px 10px 40px;
+        border: 2px solid white;
+        overflow: hidden;
+
+        &::placeholder{
+            color: white;
+        }
+    }
+
+    .nav-search-form button{
+        border: none;
+        background-color: transparent;
+        width: 40px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .languages a{
+        color: gray !important;
+        
+        &.active{
+            color: white !important;
+        }
+
+        &:hover{
+            color: white;
+            text-shadow: 0 0 5px white;
+        }
+
+    }
+    .vertical-divider{
+        height: 50%;
+        width: 2px;
+        background-color: white;
+    }
+}
+
+.categories{
+
+    .cat-title{
+        color: white;
+        font-weight: 700;
+        font-size: 48px;
+
+        span{
+            color: #FFC700;
+        }
+    }
+
+    .cat-subtitle{
+        color:#949494;
+        font-weight: 300;
+        font-size: 32px;
+    }
+
+    .product-name{
+        font-size: 20px;
+        font-weight: 300;
+        color: #FFFFFF;
+    }
+
+    .product-price{
+        font-size: 24px;
+        font-weight: 700;
+        color: #F0F0F0;
+    }
+
+    .product a {
+        text-decoration: none;
+    }
+
+    .filter-form{
+        label{
+            color: white;
+            font-weight: 400;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        select{
+            background-color: #FFC700;
+            padding: 5px 10px;
+            transform: skew(-10deg);
+        }
+    }
+
+    .my-pagination{
+        .page-item a{
+            background-color: #252525;
+            border: none;
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+            min-width: 50px;
+            min-height: 40px;
+            text-align: center;
+
+            &.active{
+                transform: scale(1.2);
+                background-color: #FFC700;
+                color: black;
+            }
+
+            &:where(.left, .right){
+                background-color: transparent !important;
+            }
+        }
+    }
+}
