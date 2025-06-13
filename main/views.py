@@ -10,3 +10,7 @@ def mainpage_view(request):
 def category_view(request):
 
     return render(request, 'category.html')
+
+
+def detail_view(request):
+    return render(request, 'detail.html')
