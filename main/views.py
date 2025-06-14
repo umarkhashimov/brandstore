@@ -14,3 +14,7 @@ def category_view(request):
 
 def detail_view(request):
     return render(request, 'detail.html')
+
+
+def cart_view(request):
+    return render(request, 'mycart.html')

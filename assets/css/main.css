@@ -376,7 +376,7 @@ body {
             text-align: center;
 
             &.active {
-                 transform: scale(1.2);
+                transform: scale(1.2);
                 background-color: #FFC700;
                 color: black;
             }
@@ -389,50 +389,50 @@ body {
 }
 
 .filter-form {
-        label {
-            color: white;
-            font-weight: 400;
-            font-size: 20px;
-            margin-right: 10px;
-        }
+    label {
+        color: white;
+        font-weight: 400;
+        font-size: 20px;
+        margin-right: 10px;
+    }
 
-        select {
-            background-color: #FFC700;
-            padding: 5px 10px;
-            transform: skew(-10deg);
-        }
+    select {
+        background-color: #FFC700;
+        padding: 5px 10px;
+        transform: skew(-10deg);
+    }
 
-        .number-inp{
-            background-color: #FFC700;
-            border: none;
-            width: 80px;
-            padding: 5px 15px;
+    .number-inp {
+        background-color: #FFC700;
+        border: none;
+        width: 80px;
+        padding: 5px 15px;
 
-            &:focus{
-                outline: none;
-            
-            }
-        }
+        &:focus {
+            outline: none;
 
-        .buy-btn{
-            color: #FFC700;
-            background-color: transparent;
-            border: 2px solid #FFC700;
-            font-size: 18px;
-            font-weight: 700;
-            padding: 15px 40px;
-            transition: 0.3s;
-
-            &:hover{
-                background-color: #FFC700;
-                color: black;
-            }
-        }
-
-        .like-btn{
-            color: white;
         }
     }
+
+    .buy-btn {
+        color: #FFC700;
+        background-color: transparent;
+        border: 2px solid #FFC700;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 15px 40px;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #FFC700;
+            color: black;
+        }
+    }
+
+    .like-btn {
+        color: white;
+    }
+}
 
 .mybreadcrumb .breadcrumb-item a {
     font-size: 16px;
@@ -446,7 +446,7 @@ body {
     color: #FFC700 !important;
 }
 
-.product-detail{
+.product-detail {
 
     .name {
         font-size: 64px;
@@ -454,13 +454,13 @@ body {
         color: white;
     }
 
-    .tags{
+    .tags {
         font-size: 24px;
         font-weight: 400;
         color: #B5B5B5;
     }
 
-    .price{
+    .price {
         color: #FFC700;
         font-size: 48px;
         font-weight: 600;
@@ -470,37 +470,37 @@ body {
     .rating {
         color: #F0F0F0;
 
-        .active{
-            color:#FFC700;
+        .active {
+            color: #FFC700;
         }
     }
 
-    .desc-title{
+    .desc-title {
         font-size: 36px;
         font-weight: 700;
         color: white;
     }
 
-    .decription{
+    .decription {
         font-size: 24px;
         font-weight: 400;
         color: #A5A5A5;
     }
 }
 
-.comments{
+.comments {
 
-    .title{
+    .title {
         font-size: 36px;
         font-weight: 700;
         color: white;
     }
 
-    .profile-img{
+    .profile-img {
         width: 150px !important;
     }
 
-    .name{
+    .name {
         font-size: 24px;
         font-weight: 600;
         color: white;
@@ -509,19 +509,19 @@ body {
     .rating {
         color: #F0F0F0;
 
-        .active{
-            color:#FFC700;
+        .active {
+            color: #FFC700;
         }
 
     }
 
-    .content{
+    .content {
         font-size: 20px;
         font-weight: 400;
         color: #A5A5A5;
     }
 
-    .leave-comment-btn{
+    .leave-comment-btn {
         background-color: transparent;
         color: #FFC700;
         font-size: 16px;
@@ -529,15 +529,15 @@ body {
         padding: 0 20px;
         transition: 0.3s;
 
-        &:hover{
+        &:hover {
             background-color: #FFC700;
             color: black;
         }
     }
-} 
+}
 
-.recommandations{
-    h5{
+.recommandations {
+    h5 {
         font-size: 36px;
         font-weight: 700;
         color: white;
@@ -557,5 +557,139 @@ body {
 
     .product a {
         text-decoration: none;
+    }
+}
+
+.mycart {
+
+    .title {
+        font-size: 36px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    .list {
+        .product-img {
+            width: 200px;
+        }
+
+        .name {
+            color: white;
+            font-size: 32px;
+            font-weight: 400;
+        }
+
+        .categories {
+            color: #B5B5B5;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .price {
+            color: #FFC700;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .cancel-btn {
+            border-radius: 50%;
+            background-color: white;
+            width: 40px;
+            height: 40px;
+            right: -30px;
+            top: calc(50% - 20px);
+            display: none;
+        }
+
+        .product-item:hover .cancel-btn {
+            display: block;
+        }
+    }
+
+    .checkout {
+        .contact-form input {
+            background-color: #111111;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 3px 0;
+        }
+
+        .contact-form input::placeholder {
+            color: #FFC700;
+            font-size: 16px;
+        }
+
+        .contact-form input:focus {
+            outline: 1px solid #FFC700;
+        }
+
+        .contact-form button {
+            padding: 10px 15px;
+            background-color: #FFC700;
+            color: black;
+            border: none;
+            font-size: 18px;
+            font-weight: 800;
+            box-shadow: 0px 0px 4px 1px #FFC700;
+        }
+
+        label {
+            color: #FFC700;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .radio-inp {
+            border-radius: 0px;
+            background-color: #111111;
+            border: none;
+            box-shadow: none;
+            color: red;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .prices {
+            p {
+                font-weight: 500;
+                font-size: 16px;
+                color: #9B9B9B;
+
+                span {
+                    color: #FFC700;
+                }
+            }
+        }
+
+        .overall-price {
+            font-weight: 600;
+            font-size: 32px;
+            color: white;
+
+            span {
+                color: #FFC700;
+            }
+        }
+
+        .buy-btn {
+        color: #FFC700;
+        background-color: transparent;
+        border: 2px solid #FFC700;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 10px 40px;
+        transition: 0.3s;
+            margin-top: 20px;
+        &:hover {
+            background-color: #FFC700;
+            color: black;
+        }
+    }
     }
 }
