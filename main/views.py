@@ -18,3 +18,10 @@ def detail_view(request):
 
 def cart_view(request):
     return render(request, 'mycart.html')
+
+def profile_view(request):
+
+    return render(request, 'profile.html')
+
+def login_view(request):
+    return render(request, 'auth/login.html')

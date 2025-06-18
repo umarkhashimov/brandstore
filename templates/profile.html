@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    {% include "components/navbar.html" %}
+    {% include "components/category-nav.html" %}
+
+
+    <div class="container content profile mt-5 pt-5">
+        <h2 class="title text-center">Профиль</h2>
+        <a href="" class="logout-btn text-center d-block">Выйти</a>
+
+        <div class="row lists mt-5 pt-5">
+            <div class="col-5 px-5">
+                <p class="subtitle">Исторя заказов</p>
+                
+                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
+                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
+                    <div>
+                        <p class="name m-0">Желтое худи</p>
+                        <p class="tags m-0">худи, одежда</p>
+                        <p class="price m-0">1199.00 грн</p>
+                    </div>
+                </div>
+                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
+                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
+                    <div>
+                        <p class="name m-0">Желтое худи</p>
+                        <p class="tags m-0">худи, одежда</p>
+                        <p class="price m-0">1199.00 грн</p>
+                    </div>
+                </div>
+                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
+                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
+                    <div>
+                        <p class="name m-0">Желтое худи</p>
+                        <p class="tags m-0">худи, одежда</p>
+                        <p class="price m-0">1199.00 грн</p>
+                    </div>
+                </div>
+                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
+                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
+                    <div>
+                        <p class="name m-0">Желтое худи</p>
+                        <p class="tags m-0">худи, одежда</p>
+                        <p class="price m-0">1199.00 грн</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-5 px-5 offset-2">
+                <p class="subtitle">Избранное</p>
+                
+                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
+                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
+                    <div>
+                        <p class="name m-0">Желтое худи</p>
+                        <p class="tags m-0">худи, одежда</p>
+                        <p class="price m-0">1199.00 грн</p>
+                    </div>
+                </div>
+                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
+                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
+                    <div>
+                        <p class="name m-0">Желтое худи</p>
+                        <p class="tags m-0">худи, одежда</p>
+                        <p class="price m-0">1199.00 грн</p>
+                    </div>
+                </div>
+                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
+                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
+                    <div>
+                        <p class="name m-0">Желтое худи</p>
+                        <p class="tags m-0">худи, одежда</p>
+                        <p class="price m-0">1199.00 грн</p>
+                    </div>
+                </div>
+                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
+                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
+                    <div>
+                        <p class="name m-0">Желтое худи</p>
+                        <p class="tags m-0">худи, одежда</p>
+                        <p class="price m-0">1199.00 грн</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

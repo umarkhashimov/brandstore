@@ -678,18 +678,248 @@ body {
         }
 
         .buy-btn {
-        color: #FFC700;
-        background-color: transparent;
-        border: 2px solid #FFC700;
-        font-size: 18px;
-        font-weight: 700;
-        padding: 10px 40px;
-        transition: 0.3s;
+            color: #FFC700;
+            background-color: transparent;
+            border: 2px solid #FFC700;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px 40px;
+            transition: 0.3s;
             margin-top: 20px;
-        &:hover {
-            background-color: #FFC700;
-            color: black;
+
+            &:hover {
+                background-color: #FFC700;
+                color: black;
+            }
         }
     }
+}
+
+.profile {
+    .title {
+        font-weight: 600;
+        font-size: 36px;
+        color: #FFFFFF;
     }
+
+    .logout-btn {
+        color: #A7A7A7;
+        font-size: 24px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+
+    .lists {
+        .subtitle {
+            font-weight: 500;
+            font-size: 24px;
+            color: #FFC700;
+            background-color: #111111;
+            padding: 10px;
+            text-align: center;
+            transform: skew(-15deg);
+        }
+
+        .product-minicard {
+            .name {
+                font-size: 32px;
+                font-weight: 400;
+                color: white;
+            }
+
+            .tags {
+                color: #B5B5B5;
+                font-weight: 400;
+                font-size: 20px;
+            }
+
+            .price {
+                font-weight: 600;
+                font-size: 32px;
+                color: #FFC700;
+            }
+
+            .image {
+                width: 150px;
+            }
+        }
+    }
+}
+
+
+.auth-wrapper {
+    min-width: 450px;
+    position: relative;
+
+    &::after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #111111;
+        z-index: -5;
+        transform: skew(-2deg);
+    }
+
+    .title {
+        font-size: 32px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .account-exist {
+        font-size: 12px;
+        font-weight: 400;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+
+    form {
+        input {
+            background-color: #080808;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        input::placeholder {
+            color: #FFC700;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: 1px solid #FFC700;
+        }
+
+        .checkbox {
+
+            input{
+
+                width: 10px !important;
+                border-radius: 0px;
+                background-color: #080808;
+                border: none;
+                box-shadow: none;
+                color: red;
+                padding: 10px;
+            }
+
+            label{
+                font-size: 12px;
+                font-weight: 400;
+                color: #FFC700;
+            }
+
+        }
+
+        .submit-btn{
+            color: #FFC700;
+            background-color: transparent;
+            border: 2px solid #FFC700;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 5px 55px;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: #FFC700;
+                color: black;
+            }
+        }
+
+        .forgot-password{
+            font-size: 12px;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+
+}
+
+.footer{
+    background-color: #191919;
+
+    .contact-btn{
+        display: block;
+        border: none;
+        background-color: #FFC700;
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .subtitle{
+        font-size: 24px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .links{
+        li{
+            padding: 5px 0;
+        }
+
+        a{
+            font-size: 16px;
+            font-weight: 400;
+            color: #B7B7B7;
+            text-decoration: none;
+            transition: 0.3s;
+            &:hover{
+                color: white;
+            }
+        }
+
+
+    }
+
+    .get-news{
+        .title{
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+        }
+        .subtitle{
+            font-size: 14px;
+            font-weight: 400;
+            color: #B7B7B7;
+        }
+
+        form{
+            input{
+                background-color: #363636;
+                font-size: 12px;
+                padding: 5px 15px;
+                border: none;
+                color: white;
+
+                &::placeholder{
+                    color: #FFC700;
+                }
+
+                &:focus{
+                    outline: none;
+                }
+            }
+
+            button{
+                border: none;
+                font-size: 12px;
+                padding: 5px 15px;
+                background-color: #FFC700;
+                color: black;
+            }
+        }
+    }
+}
+
+
+div.content{
+    min-height: calc(100vh - 89px - 44px - 300px);
 }
