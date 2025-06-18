@@ -16,18 +16,22 @@
             <a href="#">Худи</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
-            <a href="">желтое худи</a>
+            <a href="">{{ product.name }}</a>
           </li>
         </ol>
       </nav>
 
       <div class="row product-detail">
         <div class="col-6">
-          <img class="img-fluid w-100" src="{% static 'img/carousel-item.png' %}" alt="" />
+          <img class="img-fluid w-100" src="{{ product.img.url }}" alt="" />
         </div>
         <div class="col-6 d-flex flex-column justify-content-center pb-4">
-          <h3 class="name mb-0">Желтое худи</h3>
-          <p class="tags">худи, одежда</p>
+          <h3 class="name mb-0">{{ product.name }}</h3>
+          <p class="tags">
+            {% for tag in product.tags.all %}
+              {{ tag }},
+            {% endfor %}
+          </p>
           <div class="rating d-flex gap-2">
             <svg class="active" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
               <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -45,24 +49,23 @@
               <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
             </svg>
           </div>
-          <p class="price mt-4">1199.00 грн</p>
+          <p class="price mt-4">{{ product.price }} грн</p>
           <form action="" class="filter-form">
             <div class="d-flex gap-3">
               <div class="d-flex">
                 <label for="">Размер:</label>
                 <select name="" id="">
-                  <option value="">XL</option>
-                  <option value="">XL</option>
-                  <option value="">XL</option>
-                  <option value="">XL</option>
+                  {% for size in product.sizes.all %}
+                    <option value="{{ size.id }}">{{ size.size_name }}</option>
+                  {% endfor %}
                 </select>
               </div>
               <div class="d-flex">
                 <label for="">Цвет:</label>
                 <select name="" id="">
-                  <option value="">Белый</option>
-                  <option value="">Желтый</option>
-                  <option value="">Красный</option>
+                  {% for color in product.colors.all %}
+                    <option value="{{ color.id }}">{{ color.color_name }}</option>
+                  {% endfor %}
                 </select>
               </div>
               <div class="d-flex">
@@ -84,7 +87,7 @@
         </div>
         <div class="col-12">
           <h5 class="desc-title">Описание</h5>
-          <p class="decription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex optio atque alias, labore sit repellat eius blanditiis iste aliquid eveniet, eaque facilis officiis architecto, enim ducimus provident quis. Voluptatibus recusandae et distinctio est, numquam dolore pariatur mollitia eum dolor! Exercitationem sequi adipisci, reiciendis provident cum laboriosam numquam laudantium iusto voluptatum ipsa porro sint! Aspernatur esse unde nesciunt tenetur veniam saepe magni voluptatibus temporibus iste recusandae adipisci, autem possimus culpa porro a reiciendis harum impedit ipsa inventore quia laboriosam! Sapiente nisi, minima adipisci quae obcaecati, rerum quaerat labore error blanditiis praesentium facere quo sint consectetur delectus? Ipsa blanditiis consequuntur quidem sunt.</p>
+          <p class="decription">{{ product.description }}</p>
         </div>
       </div>
 
@@ -211,42 +214,17 @@
       <div class="row recommandations mt-5 pt-5">
         <h5>Рекомендуем вам</h5>
 
-        <div class="col-3 p-3 product">
-          <a href="">
-            <div class="p-4 pb-2">
-              <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-            </div>
-            <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-            <p class="product-price text-center">230₴</p>
-          </a>
-        </div>
-        <div class="col-3 p-3 product">
-          <a href="">
-            <div class="p-4 pb-2">
-              <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-            </div>
-            <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-            <p class="product-price text-center">230₴</p>
-          </a>
-        </div>
-        <div class="col-3 p-3 product">
-          <a href="">
-            <div class="p-4 pb-2">
-              <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-            </div>
-            <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-            <p class="product-price text-center">230₴</p>
-          </a>
-        </div>
-        <div class="col-3 p-3 product">
-          <a href="">
-            <div class="p-4 pb-2">
-              <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-            </div>
-            <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-            <p class="product-price text-center">230₴</p>
-          </a>
-        </div>
+        {% for pr in recomendations %}
+          <div class="col-3 p-3 product">
+            <a href="{% url 'main:detail' id=pr.id %}">
+              <div class="p-4 pb-2">
+                <img class="img-fluid w-100" src="{{pr.img.url}}" alt="" />
+              </div>
+              <p class="product-name text-center mt-2 mb-0">{{pr.name}}</p>
+              <p class="product-price text-center">{{pr.price}}₴</p>
+            </a>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>
