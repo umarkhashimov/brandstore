@@ -8,7 +8,7 @@
 
     <div class="container content profile mt-5 pt-5">
         <h2 class="title text-center">Профиль</h2>
-        <a href="" class="logout-btn text-center d-block">Выйти</a>
+        <a href="{% url "users:logout" %}" class="logout-btn text-center d-block">Выйти</a>
 
         <div class="row lists mt-5 pt-5">
             <div class="col-5 px-5">
@@ -50,39 +50,24 @@
             </div>
             <div class="col-5 px-5 offset-2">
                 <p class="subtitle">Избранное</p>
+                {% for pr in liked  %}
+                <a href="{% url "main:detail" id=pr.id %}" class="text-decoration-none">
+
+                    <div class="product-minicard d-flex align-items-center gap-4 mt-5">
+                        <div><img class="img-fluid image" src="{{pr.img.url}}" alt=""></div>
+                        <div>
+                            <p class="name m-0">{{pr.name}}</p>
+                            <p class="tags m-0">
+                                {% for tag in pr.tags.all %}
+                                {{tag}},
+                                {% endfor %}
+                            </p>
+                            <p class="price m-0">{{pr.price}} грн</p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
                 
-                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
-                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
-                    <div>
-                        <p class="name m-0">Желтое худи</p>
-                        <p class="tags m-0">худи, одежда</p>
-                        <p class="price m-0">1199.00 грн</p>
-                    </div>
-                </div>
-                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
-                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
-                    <div>
-                        <p class="name m-0">Желтое худи</p>
-                        <p class="tags m-0">худи, одежда</p>
-                        <p class="price m-0">1199.00 грн</p>
-                    </div>
-                </div>
-                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
-                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
-                    <div>
-                        <p class="name m-0">Желтое худи</p>
-                        <p class="tags m-0">худи, одежда</p>
-                        <p class="price m-0">1199.00 грн</p>
-                    </div>
-                </div>
-                <div class="product-minicard d-flex align-items-center gap-4 mt-5">
-                    <div><img class="img-fluid image" src="{% static 'img/t-shirt.png' %}" alt=""></div>
-                    <div>
-                        <p class="name m-0">Желтое худи</p>
-                        <p class="tags m-0">худи, одежда</p>
-                        <p class="price m-0">1199.00 грн</p>
-                    </div>
-                </div>
 
             </div>
         </div>
