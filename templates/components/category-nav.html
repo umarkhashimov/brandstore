@@ -1,15 +1,11 @@
+{% load custom_tags %}
+
+{% category_tags as tags %}
 <div>
     <ul class="cat-nav list-unstyled d-flex justify-content-center mb-0">
-        <li class="active"><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
-        <li class=""><a class="p-2 d-inline-block" href="">Категория</a></li>
+        {% for tag in tags %}
+        <li class="{% if category.id == tag.id %}active{%endif%}"><a class="p-2 d-inline-block" href="{% url 'main:category' id=tag.id %}">{{tag.tag_name}}</a></li>
+        {% endfor %}
+        
     </ul>
 </div>

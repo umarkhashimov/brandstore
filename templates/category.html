@@ -8,161 +8,73 @@
   <div class="container content categories">
     <div class="row pt-5 mt-5">
       <div class="col-6">
-        <h2 class="cat-title"><span>Фут</span>болки</h2>
+        <h2 class="cat-title"><span>{{category.tag_name|slice:':3'}}</span>{{category.tag_name|slice:'3:'}}</h2>
         <p class="cat-subtitle">Любые размеры и формы</p>
       </div>
       <div class="col-6">
         <form action="" class="filter-form row">
           <div class="col-7 d-flex">
             <label for="">Сортировака:</label>
-            <select name="" id="">
-              <option value="">Дешевле - Дорже</option>
-              <option value="">Дешевле - Дорже</option>
-              <option value="">Дешевле - Дорже</option>
+            <select name="sort" id="" onchange="submit()">
+              <option value="1" {% if request.GET.sort == '1' %}selected{% endif %}>Дешевле - Дороже</option>
+              <option value="2" {% if request.GET.sort == '2' %}selected{% endif %}>Дороже - Дешевле</option>
+              <option value="3" {% if request.GET.sort == '3' %}selected{% endif %}>Имя</option>
             </select>
           </div>
           <div class="col-5 d-flex">
             <label for="">Нас странице:</label>
-            <select name="" id="">
-              <option value="">16</option>
-              <option value="">20</option>
-              <option value="">32</option>
-              <option value="">12</option>
-              <option value="">8</option>
+            <select name="show" onchange="submit()" id="">
+              <option value="16" {% if request.GET.show == '16' %}selected{% endif %}>16</option>
+              <option value="12" {% if request.GET.show == '12' %}selected{% endif %}>12</option>
+              <option value="8" {% if request.GET.show == '8' %}selected{% endif %}>8</option>
+              <option value="4" {% if request.GET.show == '4' %}selected{% endif %}>4</option>
             </select>
           </div>
         </form>
       </div>
     </div>
     <div class="row pb-5 mb-5">
+      {% for product in page_obj  %}
       <div class="col-3 p-3 product">
-        <a href="">
+        <a href="{% url 'main:detail' id=product.id %}">
           <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
+            <img class="img-fluid w-100" src="{{product.img.url}}" alt="" />
           </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
+          <p class="product-name text-center mt-2 mb-0">{{product.name}}</p>
+          <p class="product-price text-center">{{product.price}}₴</p>
         </a>
       </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
-      <div class="col-3 p-3 product">
-        <a href="">
-          <div class="p-4 pb-2">
-            <img class="img-fluid w-100" src="{% static 'img/t-shirt.png' %}" alt="" />
-          </div>
-          <p class="product-name text-center mt-2 mb-0">Футболка Белая</p>
-          <p class="product-price text-center">230₴</p>
-        </a>
-      </div>
+      {%empty%}
+      <p class="text-center text-white mt-5">Ничего не найдено</p>
+      {% endfor %}
+      
     </div>
+    {% if request.GET.show and page_obj.paginator.count > request.GET.show|add:'0' %}
 
-    <nav aria-label="Page navigation example mt-5 pt-5">
+    <nav aria-label="Page navigation example mt-5 pt-5 pb-5">
       <ul class="pagination justify-content-center gap-3 my-pagination">
+        {% if page_obj.has_previous %}
         <li class="page-item">
-          <a class="page-link left" href="#" aria-label="Previous"><span aria-hidden="true">	&lt;</span></a>
+          <a class="page-link left" href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{page_obj.previous_page_number}}" aria-label="Previous"><span aria-hidden="true">	&lt;</span></a>
         </li>
+        {% endif %}
+        {% for page in page_obj.paginator.page_range %}
+        
+        {% if page > page_obj.number|add:-2 and page < page_obj.number|add:2 %}
         <li class="page-item">
-          <a class="page-link" href="#">1</a>
+          <a class="page-link {% if request.GET.page and request.GET.page|stringformat:'s' == page|stringformat:'s' %}active{%elif not request.GET.page and page == 1 %}active{% endif %}" href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{page}}">{{page}}</a>
         </li>
-        <li class="page-item">
-          <a class="page-link active" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link right" href="#" aria-label="Next"><span aria-hidden="true">	&gt;</span></a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+        {% endif %}
+        
+        {%endfor%}
+      </li>
+      {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link right" href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">	&gt;</span></a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+</div>
 {% endblock %}

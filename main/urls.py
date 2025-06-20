@@ -6,7 +6,7 @@ app_name = 'main'
 
 urlpatterns = [
     path('', mainpage_view, name='home'),
-    path('category/', category_view, name='category'),
+    path('category/<int:id>', category_view, name='category'),
     path('detail/<int:id>', detail_view, name='detail'),
     path('cart/', cart_view, name='cart'),
     path('profile/', profile_view, name='profile'),
