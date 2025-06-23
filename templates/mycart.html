@@ -11,154 +11,44 @@
     <div class="row list">
       <div class="col-12">
         <table class="w-100">
+
+          {% for pr in products %}
           <tr class="product-item">
             <td class="text-center py-4">
-              <img src="{% static 'img/t-shirt.png' %}" class="img-fluid product-img" alt="" />
+              <img src="{{pr.product.img.url}}" class="img-fluid product-img" alt="" />
             </td>
             <td class="py-4">
-              <p class="name mb-0">Желтое худи</p>
-              <p class="categories">худи, одежда</p>
+              <p class="name mb-0">{{pr.product.name}}</p>
+              <p class="categories">{% for tag in pr.product.tags.all%}{{tag}},{%endfor%}</p>
             </td>
             <td class="py-4">
               <form action="" class="filter-form">
                 <div class="d-flex gap-5">
                   <div class="d-flex">
                     <select name="" id="">
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                      <option value="">XL</option>
+                      <option value="{{pr.size.id}}">{{pr.size.size_name}}</option>
+                      
                     </select>
                   </div>
                   <div class="d-flex">
                     <select name="" id="">
-                      <option value="">Белый</option>
-                      <option value="">Желтый</option>
-                      <option value="">Красный</option>
+                      <option value="{{pr.color.id}}">{{pr.color.color_name}}</option>
                     </select>
                   </div>
                   <div class="d-flex">
-                    <input type="number" class="number-inp" name="" max="100" min="0" id="" />
+                    <input type="number" class="number-inp" name="" max="100" min="0" id="" value="{{pr.quantity}}" />
                   </div>
                 </div>
               </form>
             </td>
             <td class="position-relative py-4">
-              <p class="price mt-4">1199.00 грн</p>
-              <button class="btn-close cancel-btn position-absolute"></button>
+              <p class="price mt-4">{{pr.product.price}} грн</p>
+              <a href="{% url 'cart:delete_cart' id=pr.id %}" class="d-block btn-close cancel-btn position-absolute"></a>
             </td>
           </tr>
-          <tr class="product-item">
-            <td class="text-center py-4">
-              <img src="{% static 'img/t-shirt.png' %}" class="img-fluid product-img" alt="" />
-            </td>
-            <td class="py-4">
-              <p class="name mb-0">Желтое худи</p>
-              <p class="categories">худи, одежда</p>
-            </td>
-            <td class="py-4">
-              <form action="" class="filter-form">
-                <div class="d-flex gap-5">
-                  <div class="d-flex">
-                    <select name="" id="">
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                    </select>
-                  </div>
-                  <div class="d-flex">
-                    <select name="" id="">
-                      <option value="">Белый</option>
-                      <option value="">Желтый</option>
-                      <option value="">Красный</option>
-                    </select>
-                  </div>
-                  <div class="d-flex">
-                    <input type="number" class="number-inp" name="" max="100" min="0" id="" />
-                  </div>
-                </div>
-              </form>
-            </td>
-            <td class="position-relative py-4">
-              <p class="price mt-4">1199.00 грн</p>
-              <button class="btn-close cancel-btn position-absolute"></button>
-            </td>
-          </tr>
-          <tr class="product-item">
-            <td class="text-center py-4">
-              <img src="{% static 'img/t-shirt.png' %}" class="img-fluid product-img" alt="" />
-            </td>
-            <td class="py-4">
-              <p class="name mb-0">Желтое худи</p>
-              <p class="categories">худи, одежда</p>
-            </td>
-            <td class="py-4">
-              <form action="" class="filter-form">
-                <div class="d-flex gap-5">
-                  <div class="d-flex">
-                    <select name="" id="">
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                    </select>
-                  </div>
-                  <div class="d-flex">
-                    <select name="" id="">
-                      <option value="">Белый</option>
-                      <option value="">Желтый</option>
-                      <option value="">Красный</option>
-                    </select>
-                  </div>
-                  <div class="d-flex">
-                    <input type="number" class="number-inp" name="" max="100" min="0" id="" />
-                  </div>
-                </div>
-              </form>
-            </td>
-            <td class="position-relative py-4">
-              <p class="price mt-4">1199.00 грн</p>
-              <button class="btn-close cancel-btn position-absolute"></button>
-            </td>
-          </tr>
-          <tr class="product-item">
-            <td class="text-center py-4">
-              <img src="{% static 'img/t-shirt.png' %}" class="img-fluid product-img" alt="" />
-            </td>
-            <td class="py-4">
-              <p class="name mb-0">Желтое худи</p>
-              <p class="categories">худи, одежда</p>
-            </td>
-            <td class="py-4">
-              <form action="" class="filter-form">
-                <div class="d-flex gap-5">
-                  <div class="d-flex">
-                    <select name="" id="">
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                      <option value="">XL</option>
-                    </select>
-                  </div>
-                  <div class="d-flex">
-                    <select name="" id="">
-                      <option value="">Белый</option>
-                      <option value="">Желтый</option>
-                      <option value="">Красный</option>
-                    </select>
-                  </div>
-                  <div class="d-flex">
-                    <input type="number" class="number-inp" name="" max="100" min="0" id="" />
-                  </div>
-                </div>
-              </form>
-            </td>
-            <td class="position-relative py-4">
-              <p class="price mt-4">1199.00 грн</p>
-              <button class="btn-close cancel-btn position-absolute"></button>
-            </td>
-          </tr>
+          {%empty%}
+          <p class="text-center text-white mt-4">Пусто</p>
+          {% endfor %}
         </table>
       </div>
     </div>

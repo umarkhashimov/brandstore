@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import random
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
+from .models import CommentsModel
+from cart.models import CartModel
 # Create your views here.
 
 from products.models import ProdutsModel, TagsModel
@@ -54,11 +56,32 @@ def detail_view(request, id):
 
     context = {
         'product': product,
-        'recomendations': recomendations[:4]
+        'recomendations': recomendations[:4],
+        'comments': CommentsModel.objects.filter(product=product).order_by('-id')
     }
     return render(request, 'detail.html', context)
 
 
 def cart_view(request):
-    return render(request, 'mycart.html')
+    if not request.user.is_authenticated:
+        return redirect('main:home')
+    
+    products = CartModel.objects.filter(user=request.user)
+
+    context = {
+        'products': products
+    }
+    return render(request, 'mycart.html', context)
+
+
+def write_comment_view(request, id):
+    product = get_object_or_404(ProdutsModel, id=id)
+
+    if request.method == 'POST':
+        text = request.POST.get('comment')
+
+        CommentsModel.objects.create(user=request.user, product=product, comment=text)
+
+
+    return redirect('main:detail', id=product.id)
 
