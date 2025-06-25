@@ -68,8 +68,15 @@ def cart_view(request):
     
     products = CartModel.objects.filter(user=request.user)
 
+
+    payment = 0
+    for cart_item in products:
+        payment += cart_item.product.price * cart_item.quantity
+
     context = {
-        'products': products
+        'products': products,
+        'payment': payment,
+        
     }
     return render(request, 'mycart.html', context)
 
