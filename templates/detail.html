@@ -75,8 +75,8 @@
               </div>
             </div>
             <div class="mt-5 d-flex gap-4 align-items-center">
-              <button type="submit" class="buy-btn">КУПИТЬ</button>
               {% if request.user.is_authenticated %}
+              <button type="submit" class="buy-btn">КУПИТЬ</button>
                 <div>
                   <a class="like-btn" href="{% url 'users:like-product' id=product.id %}?next={{ request.path }}">
                     {% if product in request.user.liked.all %}
@@ -109,6 +109,7 @@
 
           <div>
             <div class="collapse" id="leaveComment">
+              {% if request.user.is_authenticated %}
               <form method="post" action="{% url 'main:write_comment' id=product.id %}">
                 {% csrf_token %}
                 <textarea name="comment" class="form-control" id=""></textarea>
@@ -116,6 +117,9 @@
                   <button class="btn btn-warning">Сохранить</button>
                 </div>
               </form>
+              {% else %}
+              <p class="text-center text-white">Вы не авторизованы. <a href="{% url "users:login" %}">Войти</a></p>
+              {% endif %}
             </div>
           </div>
         </div>

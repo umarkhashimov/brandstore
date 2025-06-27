@@ -15,34 +15,50 @@
       <div class="col-3">
         <p class="subtitle">Информация</p>
         <ul class="links list-unstyled">
-            <li><a href="">Каталог</a></li>
-            <li><a href="">О нас</a></li>
-            <li><a href="">Доставка и оплата</a></li>
-            <li><a href="">Возвращение</a></li>
+          <li>
+            <a href="">Каталог</a>
+          </li>
+          <li>
+            <a href="">О нас</a>
+          </li>
+          <li>
+            <a href="">Доставка и оплата</a>
+          </li>
+          <li>
+            <a href="">Возвращение</a>
+          </li>
         </ul>
       </div>
       <div class="col-3">
         <p class="subtitle">Контакты</p>
         <ul class="links list-unstyled">
-            <li><a href="">Каталог</a></li>
-            <li><a href="">О нас</a></li>
-            <li><a href="">Доставка и оплата</a></li>
-            <li><a href="">Возвращение</a></li>
+          <li>
+            <a href="">Каталог</a>
+          </li>
+          <li>
+            <a href="">О нас</a>
+          </li>
+          <li>
+            <a href="">Доставка и оплата</a>
+          </li>
+          <li>
+            <a href="">Возвращение</a>
+          </li>
         </ul>
       </div>
 
       <div class="col-3 get-news d-flex align-items-center">
         <div>
-            <p class="title m-0">Узнавай о новинках первым</p>
-            <p class="subtitle m-0">Получай от нас смс с сюрпризами</p>
-            
-            <form action="" class="mt-3">
-                <input type="email" placeholder="Email">
-                <button>Отправить</button>
-            </form>
+          <p class="title m-0">Узнавай о новинках первым</p>
+          <p class="subtitle m-0">Получай от нас смс с сюрпризами</p>
+
+          <form action="{% url 'main:email-subscribe' %}" method="get" class="mt-3">
+            <input type="text" hidden value="{{ request.path }}" name="next" />
+            <input name="email" required type="email" placeholder="Email" />
+            <button>Отправить</button>
+          </form>
         </div>
       </div>
-
     </div>
   </div>
 </div>

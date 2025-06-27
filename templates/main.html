@@ -131,12 +131,13 @@
 
     <div class="row mt-5 pt-5">
       <div class="col-6">
-        <form class="contact-form pe-5">
+        <form action="{% url "main:leave-contact" %}" method="post" class="contact-form pe-5">
+          {% csrf_token %}
           <div class="d-flex flex-column pe-5 gap-4">
-            <input type="text" placeholder="Ваше имя">
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="Телефон">
-            <input type="text" placeholder="Примечание">
+            <input name="full_name" type="text" placeholder="Ваше имя">
+            <input name="email" type="email" placeholder="Email">
+            <input name="phone" type="text" placeholder="Телефон">
+            <input name="note" type="text" placeholder="Примечание">
           </div>
           <button type="submit" class="mt-4">Отправить</button>
         </form>

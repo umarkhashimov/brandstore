@@ -12,7 +12,8 @@
         <p class="cat-subtitle">Любые размеры и формы</p>
       </div>
       <div class="col-6">
-        <form action="" class="filter-form row">
+        <form method="get" class="filter-form row">
+          <input hidden type="text" name="q" value="{{request.GET.q}}">
           <div class="col-7 d-flex">
             <label for="">Сортировака:</label>
             <select name="sort" id="" onchange="submit()">
